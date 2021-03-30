@@ -36,9 +36,13 @@ namespace CometShooter
             {
                 Obstacle01.Left = 1300;
             }
-            if (Obstacle02.Left < -300)
+            if (Obstacle02.Left < -300 && Obstacle01.Left < 900 && Obstacle01.Left > 150)
             {
                 Obstacle02.Left = 1500;
+            }
+            else if (Obstacle02.Left < -300 && Obstacle01.Left >= 900 && Obstacle01.Left <= 150)
+            {
+                Obstacle02.Left = 1900;
             }
             if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds))
                     { UrDed(); }

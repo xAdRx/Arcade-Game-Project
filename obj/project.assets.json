@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProjectGame\\Repo\\CometShooter.csproj",
+      "projectUniqueName": "D:\\ProjectGame\\CometShooter\\CometShooter.csproj",
       "projectName": "CometShooter",
-      "projectPath": "D:\\ProjectGame\\Repo\\CometShooter.csproj",
+      "projectPath": "D:\\ProjectGame\\CometShooter\\CometShooter.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "D:\\ProjectGame\\Repo\\obj\\",
+      "outputPath": "D:\\ProjectGame\\CometShooter\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
