@@ -51,6 +51,7 @@ namespace CometShooter
             this.Protagonist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Protagonist.TabIndex = 0;
             this.Protagonist.TabStop = false;
+            this.Protagonist.Click += new System.EventHandler(this.Protagonist_Click);
             // 
             // Obstacle01
             // 
@@ -116,7 +117,7 @@ namespace CometShooter
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(1158, 728);
+            this.ClientSize = new System.Drawing.Size(1167, 749);
             this.Controls.Add(this.Points);
             this.Controls.Add(this.Obstacle02);
             this.Controls.Add(this.checkBox1);
