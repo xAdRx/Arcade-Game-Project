@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace CometShooter
 {
-    public partial class Form1 : Form
+    public partial class FormGame : Form
     {
         int speed = 8;
-        int gravity = 9;
+        double gravity = 0;
         int points = 0;
-        public Form1()
+        public FormGame()
         {
             InitializeComponent();
             Obstacle01.Left = 1100;
@@ -24,7 +24,8 @@ namespace CometShooter
 
         private void JumpTime(object sender, EventArgs e)
         {
-            Protagonist.Top += gravity;
+            gravity = gravity /1.05;
+            Protagonist.Top += (int)gravity;
             Obstacle01.Left -= speed;
             Obstacle02.Left -= speed;
             Points.Text = "Score: " + points;
@@ -44,23 +45,28 @@ namespace CometShooter
             {
                 Obstacle02.Left = 1900;
             }
-            if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds))
+            if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds) || Protagonist.Top>650 || Protagonist.Top<-70)
                     { UrDed(); }
         }
-    private void Press(object sender, KeyEventArgs e)
+        private void Press(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Space)
+            if(e.KeyCode==Keys.W)
             {
-                gravity = -9;
+                gravity -= 10;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                gravity += 10;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                Timer.Stop();
+                this.Close();
             }
         }
 
-        private void Release(object sender, KeyEventArgs e)
+       private void Release(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
-            {
-                gravity = 9;
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -76,6 +82,22 @@ namespace CometShooter
         {
             Timer.Stop();
             Points.Text += " - YOU DIED";
+            Protagonist.Image = Properties.Resources.PlayerDed;
+            pauseanim();
+        }
+        public async void pauseanim()
+        {
+            await Task.Delay(700);
+            Protagonist.Enabled = false;
+        }
+        private void Protagonist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
