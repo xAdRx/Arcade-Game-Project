@@ -6,7 +6,6 @@ D:\ProjectGame\CometShooter\bin\Debug\net5.0-windows\CometShooter.dll
 D:\ProjectGame\CometShooter\bin\Debug\net5.0-windows\ref\CometShooter.dll
 D:\ProjectGame\CometShooter\bin\Debug\net5.0-windows\CometShooter.pdb
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.csprojAssemblyReference.cache
-D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.Form1.resources
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.Properties.Resources.resources
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.csproj.GenerateResource.cache
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.GeneratedMSBuildEditorConfig.editorconfig
@@ -17,3 +16,7 @@ D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.dll
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\ref\CometShooter.dll
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.pdb
 D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.genruntimeconfig.cache
+D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.FormCustomizeMenu.resources
+D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.FormMainMenu.resources
+D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter..resources
+D:\ProjectGame\CometShooter\obj\Debug\net5.0-windows\CometShooter.FormGame.resources
