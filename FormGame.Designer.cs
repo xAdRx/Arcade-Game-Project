@@ -46,6 +46,7 @@ namespace CometShooter
             // 
             // Protagonist
             // 
+            this.Protagonist.BackColor = System.Drawing.Color.Transparent;
             this.Protagonist.Image = global::CometShooter.Properties.Resources.Player1;
             this.Protagonist.Location = new System.Drawing.Point(70, 241);
             this.Protagonist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -58,6 +59,7 @@ namespace CometShooter
             // 
             // Obstacle01
             // 
+            this.Obstacle01.BackColor = System.Drawing.Color.Transparent;
             this.Obstacle01.Image = global::CometShooter.Properties.Resources.Obstacle;
             this.Obstacle01.Location = new System.Drawing.Point(698, 611);
             this.Obstacle01.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -79,7 +81,9 @@ namespace CometShooter
             // Points
             // 
             this.Points.AutoSize = true;
+            this.Points.BackColor = System.Drawing.Color.Transparent;
             this.Points.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Points.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Points.Location = new System.Drawing.Point(70, 59);
             this.Points.Name = "Points";
             this.Points.Size = new System.Drawing.Size(185, 54);
@@ -108,6 +112,7 @@ namespace CometShooter
             // 
             // Obstacle02
             // 
+            this.Obstacle02.BackColor = System.Drawing.Color.Transparent;
             this.Obstacle02.Image = global::CometShooter.Properties.Resources.Obstacle;
             this.Obstacle02.Location = new System.Drawing.Point(698, -63);
             this.Obstacle02.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -122,7 +127,8 @@ namespace CometShooter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::CometShooter.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.Points);
             this.Controls.Add(this.Obstacle02);
@@ -130,9 +136,7 @@ namespace CometShooter
             this.Controls.Add(this.Score);
             this.Controls.Add(this.Obstacle01);
             this.Controls.Add(this.Protagonist);
-            this.WindowState = FormWindowState.Normal;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Bounds = Screen.PrimaryScreen.Bounds;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormGame";
             this.Text = "Between Worlds";

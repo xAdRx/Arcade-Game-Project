@@ -87,7 +87,7 @@ namespace CometShooter
         }
         public async void pauseanim()
         {
-            await Task.Delay(700);
+            await Task.Delay(1000);
             Protagonist.Enabled = false;
         }
         private void Protagonist_Click(object sender, EventArgs e)

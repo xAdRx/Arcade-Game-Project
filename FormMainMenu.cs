@@ -43,5 +43,6 @@ namespace CometShooter
             Form customize = new FormCustomizeMenu();
             customize.ShowDialog();
         }
+
     }
 }
