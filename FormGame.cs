@@ -19,14 +19,15 @@ namespace CometShooter
         {
             InitializeComponent();
             Obstacle01.Left = 1100;
-            Obstacle02.Left = 1700;
+            Obstacle02.Left = 1900;
             Meteor1.Left = 2132;
             Meteor2.Left = 3210;
             Meteor3.Left = 4312;
             Meteor4.Left = 2314;
+            ProjHit.Left = 4000;
             Projectile.Visible = false;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            //            Projectile.Parent = Background;
+                       Projectile.Parent = pictureBox1;
             //          Protagonist.Parent = Background;
             //          Obstacle01.Parent = Background;
             //          Obstacle02.Parent = Background;
@@ -86,15 +87,15 @@ namespace CometShooter
                 if (Projectile.Bounds.IntersectsWith(Obstacle01.Bounds) || Projectile.Bounds.IntersectsWith(Obstacle02.Bounds) ||
                     Projectile.Bounds.IntersectsWith(Meteor1.Bounds) || Projectile.Bounds.IntersectsWith(Meteor2.Bounds) ||
                     Projectile.Bounds.IntersectsWith(Meteor3.Bounds) || Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
-                { Projectile.Visible = false; }
+                { Projectile.Visible = false; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor1.Bounds))
-                { Projectile.Visible = false; Meteor1.Left = 2313; }
+                { Projectile.Visible = false; Meteor1.Left = 2313; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor2.Bounds))
-                { Projectile.Visible = false; Meteor2.Left = 2513; }
+                { Projectile.Visible = false; Meteor2.Left = 2513; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor3.Bounds))
-                { Projectile.Visible = false; Meteor3.Left = 1913; }
+                { Projectile.Visible = false; Meteor3.Left = 1913; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
-                { Projectile.Visible = false; Meteor4.Left = 2113; }
+                { Projectile.Visible = false; Meteor4.Left = 2113; ProjectileHit(); }
                 if (Projectile.Left > 1900) { Projectile.Visible = false; }
                 if (Projectile.Right > 1900) { Projectile.Visible = false; }
             }
@@ -151,7 +152,18 @@ namespace CometShooter
             Projectile.Top = Protagonist.Top + 60;
             Projectile.Left = 220;
         }
+        private void ProjectileHit()
+        {
+            ProjHit.Left = Projectile.Left;
+            ProjHit.Top = Projectile.Top - 20;
+            ProjHit.Image = Properties.Resources.ProjectileHitAnimated;
+        }
         private void FormGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }

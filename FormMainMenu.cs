@@ -24,8 +24,14 @@ namespace CometShooter
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Visible = false;
+            ShowInTaskbar = false;
+
             Form game = new FormGame();
             game.ShowDialog();
+
+            Visible = true;
+            ShowInTaskbar = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,8 +46,14 @@ namespace CometShooter
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Visible = false;
+            ShowInTaskbar = false;
+
             Form customize = new FormCustomizeMenu();
             customize.ShowDialog();
+
+            Visible = true;
+            ShowInTaskbar = true;
         }
 
     }

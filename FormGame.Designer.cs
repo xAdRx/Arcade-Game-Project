@@ -44,7 +44,8 @@ namespace CometShooter
             this.Meteor2 = new System.Windows.Forms.PictureBox();
             this.Meteor3 = new System.Windows.Forms.PictureBox();
             this.Meteor4 = new System.Windows.Forms.PictureBox();
-            this.Background = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ProjHit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Protagonist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Obstacle01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Obstacle02)).BeginInit();
@@ -53,7 +54,8 @@ namespace CometShooter
             ((System.ComponentModel.ISupportInitialize)(this.Meteor2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Meteor3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Meteor4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjHit)).BeginInit();
             this.SuspendLayout();
             // 
             // Protagonist
@@ -70,10 +72,10 @@ namespace CometShooter
             // Obstacle01
             // 
             this.Obstacle01.BackColor = System.Drawing.Color.Black;
-            this.Obstacle01.Image = global::CometShooter.Properties.Resources.Obstacle;
-            this.Obstacle01.Location = new System.Drawing.Point(611, 519);
+            this.Obstacle01.Image = global::CometShooter.Properties.Resources.ObstacleNew2;
+            this.Obstacle01.Location = new System.Drawing.Point(611, 486);
             this.Obstacle01.Name = "Obstacle01";
-            this.Obstacle01.Size = new System.Drawing.Size(205, 398);
+            this.Obstacle01.Size = new System.Drawing.Size(142, 431);
             this.Obstacle01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Obstacle01.TabIndex = 2;
             this.Obstacle01.TabStop = false;
@@ -103,7 +105,7 @@ namespace CometShooter
             // Timer
             // 
             this.Timer.Enabled = true;
-            this.Timer.Interval = 15;
+            this.Timer.Interval = 16;
             this.Timer.Tick += new System.EventHandler(this.JumpTime);
             // 
             // checkBox1
@@ -121,10 +123,10 @@ namespace CometShooter
             // Obstacle02
             // 
             this.Obstacle02.BackColor = System.Drawing.Color.Black;
-            this.Obstacle02.Image = global::CometShooter.Properties.Resources.Obstacle;
-            this.Obstacle02.Location = new System.Drawing.Point(611, -69);
+            this.Obstacle02.Image = global::CometShooter.Properties.Resources.ObstacleNew1;
+            this.Obstacle02.Location = new System.Drawing.Point(611, -19);
             this.Obstacle02.Name = "Obstacle02";
-            this.Obstacle02.Size = new System.Drawing.Size(186, 342);
+            this.Obstacle02.Size = new System.Drawing.Size(125, 400);
             this.Obstacle02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Obstacle02.TabIndex = 6;
             this.Obstacle02.TabStop = false;
@@ -134,7 +136,7 @@ namespace CometShooter
             // 
             this.Projectile.BackColor = System.Drawing.Color.Black;
             this.Projectile.Image = global::CometShooter.Properties.Resources.Projectile;
-            this.Projectile.Location = new System.Drawing.Point(257, 250);
+            this.Projectile.Location = new System.Drawing.Point(285, 247);
             this.Projectile.Name = "Projectile";
             this.Projectile.Size = new System.Drawing.Size(98, 49);
             this.Projectile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +147,7 @@ namespace CometShooter
             // 
             this.Meteor1.BackColor = System.Drawing.Color.Black;
             this.Meteor1.Image = global::CometShooter.Properties.Resources.TestMeteor;
-            this.Meteor1.Location = new System.Drawing.Point(461, 112);
+            this.Meteor1.Location = new System.Drawing.Point(429, 44);
             this.Meteor1.Name = "Meteor1";
             this.Meteor1.Size = new System.Drawing.Size(167, 172);
             this.Meteor1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +169,7 @@ namespace CometShooter
             // 
             this.Meteor3.BackColor = System.Drawing.Color.Black;
             this.Meteor3.Image = global::CometShooter.Properties.Resources.TestMeteor3;
-            this.Meteor3.Location = new System.Drawing.Point(479, 383);
+            this.Meteor3.Location = new System.Drawing.Point(461, 426);
             this.Meteor3.Name = "Meteor3";
             this.Meteor3.Size = new System.Drawing.Size(135, 141);
             this.Meteor3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,43 +180,53 @@ namespace CometShooter
             // 
             this.Meteor4.BackColor = System.Drawing.Color.Black;
             this.Meteor4.Image = global::CometShooter.Properties.Resources.TestMeteor;
-            this.Meteor4.Location = new System.Drawing.Point(420, 519);
+            this.Meteor4.Location = new System.Drawing.Point(420, 643);
             this.Meteor4.Name = "Meteor4";
             this.Meteor4.Size = new System.Drawing.Size(185, 182);
             this.Meteor4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Meteor4.TabIndex = 11;
             this.Meteor4.TabStop = false;
             // 
-            // Background
+            // pictureBox1
             // 
-            this.Background.BackgroundImage = global::CometShooter.Properties.Resources.BckgAnimated;
-            this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Background.Image = global::CometShooter.Properties.Resources.background;
-            this.Background.Location = new System.Drawing.Point(0, 0);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1680, 907);
-            this.Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Background.TabIndex = 12;
-            this.Background.TabStop = false;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::CometShooter.Properties.Resources.BckgAnimated;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1680, 907);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // ProjHit
+            // 
+            this.ProjHit.Image = global::CometShooter.Properties.Resources.ProjectileHitAnimated1;
+            this.ProjHit.Location = new System.Drawing.Point(796, 219);
+            this.ProjHit.Name = "ProjHit";
+            this.ProjHit.Size = new System.Drawing.Size(135, 128);
+            this.ProjHit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProjHit.TabIndex = 13;
+            this.ProjHit.TabStop = false;
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1680, 907);
+            this.Controls.Add(this.Projectile);
             this.Controls.Add(this.Meteor4);
             this.Controls.Add(this.Meteor3);
             this.Controls.Add(this.Meteor2);
             this.Controls.Add(this.Meteor1);
-            this.Controls.Add(this.Projectile);
             this.Controls.Add(this.Points);
             this.Controls.Add(this.Obstacle02);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.Obstacle01);
             this.Controls.Add(this.Protagonist);
-            this.Controls.Add(this.Background);
+            this.Controls.Add(this.ProjHit);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGame";
             this.Text = "Between Worlds";
@@ -227,7 +239,8 @@ namespace CometShooter
             ((System.ComponentModel.ISupportInitialize)(this.Meteor2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Meteor3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Meteor4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjHit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +261,8 @@ namespace CometShooter
         private System.Windows.Forms.PictureBox Meteor2;
         private System.Windows.Forms.PictureBox Meteor3;
         private System.Windows.Forms.PictureBox Meteor4;
-        private PictureBox Background;
+        private PictureBox pictureBox1;
+        private PictureBox ProjHit;
     }
 }
 

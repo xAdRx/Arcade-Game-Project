@@ -100,11 +100,11 @@ namespace CometShooter
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::CometShooter.Properties.Resources.background;
+            this.pictureBox2.Image = global::CometShooter.Properties.Resources.BckgAnimated;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1680, 810);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 

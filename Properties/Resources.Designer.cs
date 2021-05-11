@@ -123,6 +123,36 @@ namespace CometShooter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ObstacleNew1 {
+            get {
+                object obj = ResourceManager.GetObject("ObstacleNew1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObstacleNew11 {
+            get {
+                object obj = ResourceManager.GetObject("ObstacleNew11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObstacleNew2 {
+            get {
+                object obj = ResourceManager.GetObject("ObstacleNew2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ObstacleSmall {
             get {
                 object obj = ResourceManager.GetObject("ObstacleSmall", resourceCulture);
@@ -176,6 +206,36 @@ namespace CometShooter.Properties {
         internal static System.Drawing.Bitmap Projectile {
             get {
                 object obj = ResourceManager.GetObject("Projectile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProjectileHit {
+            get {
+                object obj = ResourceManager.GetObject("ProjectileHit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProjectileHitAnimated {
+            get {
+                object obj = ResourceManager.GetObject("ProjectileHitAnimated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProjectileHitAnimated1 {
+            get {
+                object obj = ResourceManager.GetObject("ProjectileHitAnimated1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
