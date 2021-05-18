@@ -25,8 +25,10 @@ namespace CometShooter
             Meteor3.Left = 4312;
             Meteor4.Left = 2314;
             ProjHit.Left = 4000;
+            ShipExplode.Left = 4000;
             Projectile.Visible = false;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            Protagonist.Image = CometShooter.FormMainMenu.skin;
                        Projectile.Parent = pictureBox1;
             //          Protagonist.Parent = Background;
             //          Obstacle01.Parent = Background;
@@ -52,14 +54,18 @@ namespace CometShooter
             if (Obstacle01.Left == 100 || Obstacle02.Left == 100)
             {
                 points++;
+                speed++;
             }
             if (Obstacle01.Left < -300)
             {
                 Obstacle01.Left = 2300;
+                points++;
+                speed++;
             }
             if (Obstacle02.Left < -300 && Obstacle01.Left < 900 && Obstacle01.Left > 150)
             {
                 Obstacle02.Left = 1700;
+                points++;
             }
             else if (Obstacle02.Left < -300 && Obstacle01.Left >= 900 && Obstacle01.Left <= 150)
             {
@@ -144,7 +150,10 @@ namespace CometShooter
         {
             Timer.Stop();
             Points.Text += " - YOU DIED";
-            Protagonist.Image = Properties.Resources.PlayerDed;
+            //            Protagonist.Image = Properties.Resources.PlayerDed;
+            ShipExplode.Left = Protagonist.Left -70;
+            ShipExplode.Top = Protagonist.Top - 90;
+            ShipExplode.Image = Properties.Resources.Explosion;
         }
         private void Fire()
         {
@@ -154,9 +163,9 @@ namespace CometShooter
         }
         private void ProjectileHit()
         {
-            ProjHit.Left = Projectile.Left;
-            ProjHit.Top = Projectile.Top - 20;
-            ProjHit.Image = Properties.Resources.ProjectileHitAnimated;
+            ProjHit.Left = Projectile.Left + 40;
+            ProjHit.Top = Projectile.Top -50;
+            ProjHit.Image = Properties.Resources.ProjectileHitAnimatedHQ;
         }
         private void FormGame_Load(object sender, EventArgs e)
         {
