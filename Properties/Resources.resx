@@ -130,14 +130,20 @@
   <data name="Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MechaBossZilla1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MechaBossZilla1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TestMeteor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\TestMeteor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Skin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Skin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BossBeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BossBeam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ObstacleNew11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\ObstacleNew1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MeteorExplode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MeteorExplode.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayerDed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\PlayerDed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,14 +166,20 @@
   <data name="Skin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skin2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MeteorExplodeSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MeteorExplodeSmall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Explosion.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boom3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boom3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Projectile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\Projectile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ProjectileHitAnimated1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\ProjectileHitAnimated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +196,20 @@
   <data name="TestMeteor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\TestMeteor3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MechaBossZillaFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MechaBossZillaFire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ProjectileHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\ProjectileHit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ObstacleNew1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\ObstacleNew1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MechaBossZilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MechaBossZilla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayerNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\PlayerNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,10 +226,13 @@
   <data name="ProjectileHitAnimatedHQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectileHitAnimatedHQ.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MechaBossZillaToFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MechaBossZillaToFire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ProjectileHQ" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectileHQ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Explosion.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BossBeam1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BossBeam1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

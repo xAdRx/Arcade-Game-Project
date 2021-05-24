@@ -143,6 +143,26 @@ namespace CometShooter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BossBeam {
+            get {
+                object obj = ResourceManager.GetObject("BossBeam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BossBeam1 {
+            get {
+                object obj = ResourceManager.GetObject("BossBeam1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Explosion {
             get {
                 object obj = ResourceManager.GetObject("Explosion", resourceCulture);
@@ -156,6 +176,66 @@ namespace CometShooter.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MechaBossZilla {
+            get {
+                object obj = ResourceManager.GetObject("MechaBossZilla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MechaBossZilla1 {
+            get {
+                object obj = ResourceManager.GetObject("MechaBossZilla1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MechaBossZillaFire {
+            get {
+                object obj = ResourceManager.GetObject("MechaBossZillaFire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MechaBossZillaToFire {
+            get {
+                object obj = ResourceManager.GetObject("MechaBossZillaToFire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MeteorExplode {
+            get {
+                object obj = ResourceManager.GetObject("MeteorExplode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MeteorExplodeSmall {
+            get {
+                object obj = ResourceManager.GetObject("MeteorExplodeSmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
