@@ -5,6 +5,7 @@ namespace CometShooter
 {
     partial class FormMainMenu
     {
+        static public System.Drawing.Bitmap skin = global::CometShooter.Properties.Resources.PlayerNew;
         /// <summary>
         ///  Required designer variable.
         /// </summary>
