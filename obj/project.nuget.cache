@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fwvwg0occIKw4QyFC3trYpWrAgoB/RKruYUAArUaFHIWsreVBV/T7jFHbKnfCJ4NVotwrxWT1fW/LQpm1TYNNQ==",
+  "dgSpecHash": "zTJmT/4nimkZ60MhtBbOtrBGu9aUrr5oTirjunjmXRW9AKHDOeUwSpPoy/fgs6QzYj1saM0rwcDHvr6KBWf4NQ==",
   "success": true,
-  "projectFilePath": "D:\\ProjectGame\\Repo\\CometShooter.csproj",
+  "projectFilePath": "D:\\ProjectGame\\CometShooter\\CometShooter.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

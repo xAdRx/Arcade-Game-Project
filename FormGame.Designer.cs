@@ -32,7 +32,6 @@ namespace CometShooter
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.Protagonist = new System.Windows.Forms.PictureBox();
             this.Obstacle01 = new System.Windows.Forms.PictureBox();
             this.Score = new System.Windows.Forms.Label();
@@ -47,11 +46,6 @@ namespace CometShooter
             this.Meteor4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ProjHit = new System.Windows.Forms.PictureBox();
-            this.ShipExplode = new System.Windows.Forms.PictureBox();
-            this.MechaBossZilla = new System.Windows.Forms.PictureBox();
-            this.Bosshealth = new System.Windows.Forms.TextBox();
-            this.winner = new System.Windows.Forms.TextBox();
-            this.Beam = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Protagonist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Obstacle01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Obstacle02)).BeginInit();
@@ -62,15 +56,12 @@ namespace CometShooter
             ((System.ComponentModel.ISupportInitialize)(this.Meteor4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjHit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShipExplode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MechaBossZilla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Beam)).BeginInit();
             this.SuspendLayout();
             // 
             // Protagonist
             // 
             this.Protagonist.BackColor = System.Drawing.Color.Black;
-            this.Protagonist.Image = ((System.Drawing.Image)(resources.GetObject("Protagonist.Image")));
+            this.Protagonist.Image = global::CometShooter.Properties.Resources.PlayerNew;
             this.Protagonist.Location = new System.Drawing.Point(27, 192);
             this.Protagonist.Name = "Protagonist";
             this.Protagonist.Size = new System.Drawing.Size(328, 155);
@@ -82,7 +73,7 @@ namespace CometShooter
             // 
             this.Obstacle01.BackColor = System.Drawing.Color.Black;
             this.Obstacle01.Image = global::CometShooter.Properties.Resources.ObstacleNew2;
-            this.Obstacle01.Location = new System.Drawing.Point(611, 494);
+            this.Obstacle01.Location = new System.Drawing.Point(611, 486);
             this.Obstacle01.Name = "Obstacle01";
             this.Obstacle01.Size = new System.Drawing.Size(142, 431);
             this.Obstacle01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,7 +124,7 @@ namespace CometShooter
             // 
             this.Obstacle02.BackColor = System.Drawing.Color.Black;
             this.Obstacle02.Image = global::CometShooter.Properties.Resources.ObstacleNew1;
-            this.Obstacle02.Location = new System.Drawing.Point(611, -25);
+            this.Obstacle02.Location = new System.Drawing.Point(611, -19);
             this.Obstacle02.Name = "Obstacle02";
             this.Obstacle02.Size = new System.Drawing.Size(125, 400);
             this.Obstacle02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,10 +135,10 @@ namespace CometShooter
             // Projectile
             // 
             this.Projectile.BackColor = System.Drawing.Color.Black;
-            this.Projectile.Image = global::CometShooter.Properties.Resources.ProjectileHQ;
-            this.Projectile.Location = new System.Drawing.Point(229, 259);
+            this.Projectile.Image = global::CometShooter.Properties.Resources.Projectile;
+            this.Projectile.Location = new System.Drawing.Point(285, 247);
             this.Projectile.Name = "Projectile";
-            this.Projectile.Size = new System.Drawing.Size(200, 30);
+            this.Projectile.Size = new System.Drawing.Size(98, 49);
             this.Projectile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Projectile.TabIndex = 7;
             this.Projectile.TabStop = false;
@@ -167,7 +158,7 @@ namespace CometShooter
             // 
             this.Meteor2.BackColor = System.Drawing.Color.Black;
             this.Meteor2.Image = global::CometShooter.Properties.Resources.TestMeteor2;
-            this.Meteor2.Location = new System.Drawing.Point(470, 285);
+            this.Meteor2.Location = new System.Drawing.Point(461, 267);
             this.Meteor2.Name = "Meteor2";
             this.Meteor2.Size = new System.Drawing.Size(144, 146);
             this.Meteor2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +169,7 @@ namespace CometShooter
             // 
             this.Meteor3.BackColor = System.Drawing.Color.Black;
             this.Meteor3.Image = global::CometShooter.Properties.Resources.TestMeteor3;
-            this.Meteor3.Location = new System.Drawing.Point(470, 414);
+            this.Meteor3.Location = new System.Drawing.Point(461, 426);
             this.Meteor3.Name = "Meteor3";
             this.Meteor3.Size = new System.Drawing.Size(135, 141);
             this.Meteor3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +200,7 @@ namespace CometShooter
             // 
             // ProjHit
             // 
-            this.ProjHit.Image = global::CometShooter.Properties.Resources.ProjectileHitAnimatedHQ;
+            this.ProjHit.Image = global::CometShooter.Properties.Resources.ProjectileHitAnimated1;
             this.ProjHit.Location = new System.Drawing.Point(796, 219);
             this.ProjHit.Name = "ProjHit";
             this.ProjHit.Size = new System.Drawing.Size(135, 128);
@@ -217,84 +208,22 @@ namespace CometShooter
             this.ProjHit.TabIndex = 13;
             this.ProjHit.TabStop = false;
             // 
-            // ShipExplode
-            // 
-            this.ShipExplode.Image = global::CometShooter.Properties.Resources.Explosion;
-            this.ShipExplode.Location = new System.Drawing.Point(832, 395);
-            this.ShipExplode.Name = "ShipExplode";
-            this.ShipExplode.Size = new System.Drawing.Size(621, 355);
-            this.ShipExplode.TabIndex = 14;
-            this.ShipExplode.TabStop = false;
-            // 
-            // MechaBossZilla
-            // 
-            this.MechaBossZilla.Image = global::CometShooter.Properties.Resources.MechaBossZilla1;
-            this.MechaBossZilla.Location = new System.Drawing.Point(1083, 219);
-            this.MechaBossZilla.Name = "MechaBossZilla";
-            this.MechaBossZilla.Size = new System.Drawing.Size(522, 453);
-            this.MechaBossZilla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MechaBossZilla.TabIndex = 15;
-            this.MechaBossZilla.TabStop = false;
-            // 
-            // Bosshealth
-            // 
-            this.Bosshealth.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Bosshealth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Bosshealth.Font = new System.Drawing.Font("Simplex", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Bosshealth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Bosshealth.Location = new System.Drawing.Point(696, 12);
-            this.Bosshealth.Name = "Bosshealth";
-            this.Bosshealth.Size = new System.Drawing.Size(326, 52);
-            this.Bosshealth.TabIndex = 16;
-            this.Bosshealth.Text = "BossHealth:";
-            this.Bosshealth.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // winner
-            // 
-            this.winner.BackColor = System.Drawing.SystemColors.MenuText;
-            this.winner.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.winner.ForeColor = System.Drawing.Color.White;
-            this.winner.Location = new System.Drawing.Point(661, 445);
-            this.winner.Name = "winner";
-            this.winner.Size = new System.Drawing.Size(384, 93);
-            this.winner.TabIndex = 17;
-            this.winner.Text = "YOU WIN!!!";
-            this.winner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.winner.TextChanged += new System.EventHandler(this.youwin_TextChanged);
-            // 
-            // Beam
-            // 
-            this.Beam.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Beam.Image = global::CometShooter.Properties.Resources.BossBeam1;
-            this.Beam.Location = new System.Drawing.Point(-767, 713);
-            this.Beam.Name = "Beam";
-            this.Beam.Size = new System.Drawing.Size(2147, 182);
-            this.Beam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Beam.TabIndex = 18;
-            this.Beam.TabStop = false;
-            this.Beam.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1680, 907);
-            this.Controls.Add(this.MechaBossZilla);
-            this.Controls.Add(this.Beam);
-            this.Controls.Add(this.winner);
-            this.Controls.Add(this.Bosshealth);
-            this.Controls.Add(this.ShipExplode);
-            this.Controls.Add(this.Obstacle02);
-            this.Controls.Add(this.Obstacle01);
             this.Controls.Add(this.Projectile);
             this.Controls.Add(this.Meteor4);
             this.Controls.Add(this.Meteor3);
             this.Controls.Add(this.Meteor2);
             this.Controls.Add(this.Meteor1);
             this.Controls.Add(this.Points);
+            this.Controls.Add(this.Obstacle02);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Score);
+            this.Controls.Add(this.Obstacle01);
             this.Controls.Add(this.Protagonist);
             this.Controls.Add(this.ProjHit);
             this.Controls.Add(this.pictureBox1);
@@ -312,9 +241,6 @@ namespace CometShooter
             ((System.ComponentModel.ISupportInitialize)(this.Meteor4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjHit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShipExplode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MechaBossZilla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Beam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,11 +263,6 @@ namespace CometShooter
         private System.Windows.Forms.PictureBox Meteor4;
         private PictureBox pictureBox1;
         private PictureBox ProjHit;
-        private PictureBox ShipExplode;
-        private PictureBox MechaBossZilla;
-        private TextBox Bosshealth;
-        private TextBox winner;
-        private PictureBox Beam;
     }
 }
 

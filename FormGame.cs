@@ -15,19 +15,9 @@ namespace CometShooter
         int speed = 8;
         double gravity = 0;
         int points = 0;
-        bool bossfight;
-        bool cutscene;
-        bool bossUp = true;
-        bool bossDown = false;
-        int ZillaHealth = 10;
-        int AttackPhase = 0;
         public FormGame()
         {
-            bossfight = false;
-            cutscene = false;
             InitializeComponent();
-            Bosshealth.Visible = false;
-            winner.Visible = false;
             Obstacle01.Left = 1100;
             Obstacle02.Left = 1900;
             Meteor1.Left = 2132;
@@ -35,12 +25,8 @@ namespace CometShooter
             Meteor3.Left = 4312;
             Meteor4.Left = 2314;
             ProjHit.Left = 4000;
-            MechaBossZilla.Left = 6000;
-            Beam.Top = 4000;
-            ShipExplode.Left = 4000;
             Projectile.Visible = false;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            Protagonist.Image = CometShooter.FormMainMenu.skin;
                        Projectile.Parent = pictureBox1;
             //          Protagonist.Parent = Background;
             //          Obstacle01.Parent = Background;
@@ -63,44 +49,35 @@ namespace CometShooter
             Meteor3.Left -= speed;
             Meteor4.Left -= speed;
             Points.Text = "Score: " + points;
-
-            if (points>9) { bossfight = true; }   // DO USTALENIA KIEDY JEST BOSSFIGHT ----------------------------------------------------------
-
-            if (cutscene == true && MechaBossZilla.Left > 1100)
-            { MechaBossZilla.Left-=speed; }
             if (Obstacle01.Left == 100 || Obstacle02.Left == 100)
             {
                 points++;
-                speed++;
             }
-            if (Obstacle01.Left < -300 && bossfight == false)
+            if (Obstacle01.Left < -300)
             {
                 Obstacle01.Left = 2300;
-                points++;
-                speed++;
             }
-            if (Obstacle02.Left < -300 && Obstacle01.Left < 900 && Obstacle01.Left > 150 && bossfight == false)
+            if (Obstacle02.Left < -300 && Obstacle01.Left < 900 && Obstacle01.Left > 150)
             {
                 Obstacle02.Left = 1700;
-                points++;
             }
-            else if (Obstacle02.Left < -300 && Obstacle01.Left >= 900 && Obstacle01.Left <= 150 && bossfight == false)
+            else if (Obstacle02.Left < -300 && Obstacle01.Left >= 900 && Obstacle01.Left <= 150)
             {
                 Obstacle02.Left = 2700;
             }
-            if (Meteor1.Left < -300 && bossfight == false || Meteor1.Bounds.IntersectsWith(Obstacle02.Bounds))
+            if (Meteor1.Left < -300 || Meteor1.Bounds.IntersectsWith(Obstacle02.Bounds))
             {
                 Meteor1.Left = 1813;
             }
-            if (Meteor2.Left < -300 && bossfight == false)
+            if (Meteor2.Left < -300)
             {
                 Meteor2.Left = 2113;
             }
-            if (Meteor3.Left < -300 && bossfight == false || Meteor3.Bounds.IntersectsWith(Obstacle01.Bounds))
+            if (Meteor3.Left < -300 || Meteor3.Bounds.IntersectsWith(Obstacle01.Bounds))
             {
                 Meteor3.Left = 2313;
             }
-            if (Meteor4.Left < -300 && bossfight == false || Meteor4.Bounds.IntersectsWith(Obstacle01.Bounds))
+            if (Meteor4.Left < -300 || Meteor4.Bounds.IntersectsWith(Obstacle01.Bounds))
             {
                 Meteor4.Left = 2513;
             }
@@ -112,54 +89,22 @@ namespace CometShooter
                     Projectile.Bounds.IntersectsWith(Meteor3.Bounds) || Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
                 { Projectile.Visible = false; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor1.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
-                     if(bossfight == false) { Meteor1.Left = 2313; }
-                     else { Meteor1.Left = -2000; }
-                }
+                { Projectile.Visible = false; Meteor1.Left = 2313; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor2.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
-                    if (bossfight == false) { Meteor2.Left = 2513; }
-                    else { Meteor2.Left = -2000; }
-                }
+                { Projectile.Visible = false; Meteor2.Left = 2513; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor3.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
-                    if (bossfight == false) { Meteor3.Left = 1913; }
-                    else { Meteor3.Left = -2000; }
-                }
+                { Projectile.Visible = false; Meteor3.Left = 1913; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
-                    if (bossfight == false) { Meteor4.Left = 2113; }
-                    else { Meteor4.Left = -2000; }
-                }
+                { Projectile.Visible = false; Meteor4.Left = 2113; ProjectileHit(); }
                 if (Projectile.Left > 1900) { Projectile.Visible = false; }
                 if (Projectile.Right > 1900) { Projectile.Visible = false; }
-                if (MechaBossZilla.Left < 1100 && Projectile.Bounds.IntersectsWith(MechaBossZilla.Bounds))
-                    { Projectile.Visible = false; ProjectileHit(); ZillaHealth--; }
             }
-            if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds) || Protagonist.Top > 850 || Protagonist.Top < -70 || Protagonist.Bounds.IntersectsWith(Beam.Bounds))
+            if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds) || Protagonist.Top > 850 || Protagonist.Top < -70)
             { UrDed(); }
             if (Protagonist.Bounds.IntersectsWith(Meteor1.Bounds)) { UrDed(); Meteor1.Left = 2000; }
             if (Protagonist.Bounds.IntersectsWith(Meteor2.Bounds)) { UrDed(); Meteor2.Left = 2000; }
             if (Protagonist.Bounds.IntersectsWith(Meteor3.Bounds)) { UrDed(); Meteor3.Left = 2000; }
             if (Protagonist.Bounds.IntersectsWith(Meteor4.Bounds)) { UrDed(); Meteor4.Left = 2000; }
-            if (Obstacle01.Left < -1400 && cutscene == false && MechaBossZilla.Left > 1100) { cutscene = true; MechaBossZilla.Left = 1800; speed = 6; }
-            if (MechaBossZilla.Left < 1100 && MechaBossZilla.Left > 0)
-            {
-                Bosshealth.Visible = true;
-                Bosshealth.Text = "Health: " + ZillaHealth;
-                BossMovement();
-                BossAttack();
-            }
-            if (ZillaHealth == 0) { BossIsDead(); }
-            if (ZillaHealth < 0 && Obstacle01.Left < -1400)
-            {
-                winner.Visible = true;
-            }
-            if (ZillaHealth < 0 && Obstacle01.Left < -1800)
-            {
-                Timer.Stop();
-                this.Close();
-            }
         }
         private void Press(object sender, KeyEventArgs e)
         {
@@ -199,77 +144,26 @@ namespace CometShooter
         {
             Timer.Stop();
             Points.Text += " - YOU DIED";
-            //            Protagonist.Image = Properties.Resources.PlayerDed;
-            ShipExplode.Left = Protagonist.Left -70;
-            ShipExplode.Top = Protagonist.Top - 90;
-            ShipExplode.Image = Properties.Resources.Explosion;
+            Protagonist.Image = Properties.Resources.PlayerDed;
         }
         private void Fire()
         {
             Projectile.Visible = true;
-            Projectile.Top = Protagonist.Top + 80;
+            Projectile.Top = Protagonist.Top + 60;
             Projectile.Left = 220;
         }
         private void ProjectileHit()
         {
-            ProjHit.Left = Projectile.Left + 40;
-            ProjHit.Top = Projectile.Top -50;
-            ProjHit.Image = Properties.Resources.ProjectileHitAnimatedHQ;
-        }
-        private void BossMovement()
-        {
-            if(bossUp==true) { MechaBossZilla.Top -= speed; }
-            if (bossDown == true) { MechaBossZilla.Top += speed; }
-            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
-            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
-        }
-        private void BossAttack()
-        {
-            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
-            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
-            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
-                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
-                Beam.Top = MechaBossZilla.Top + 145;
-            }
-            if(Obstacle02.Left < -2100 && AttackPhase == 2)
-            {
-                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
-                AttackPhase = 0;
-            }
-
-        }
-        private void BossIsDead()
-        {
-            ZillaHealth = -1;
-            Obstacle01.Left = -800;
-            Bosshealth.Visible = false;
-            ShipExplode.Left = MechaBossZilla.Left - 70;
-            ShipExplode.Top = MechaBossZilla.Top = 300;
-            ShipExplode.Image = Properties.Resources.Explosion;
-            MechaBossZilla.Left = -2000;
-            Beam.Top = 4000;
-            points += 100;
+            ProjHit.Left = Projectile.Left;
+            ProjHit.Top = Projectile.Top - 20;
+            ProjHit.Image = Properties.Resources.ProjectileHitAnimated;
         }
         private void FormGame_Load(object sender, EventArgs e)
         {
 
         }
+
         private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void youwin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
