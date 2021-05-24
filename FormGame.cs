@@ -25,6 +25,17 @@ namespace CometShooter
             Meteor3.Left = 4312;
             Meteor4.Left = 2314;
             ProjHit.Left = 4000;
+            MechaBossZilla.Left = 6000;
+            Beam.Top = 4000;
+            ShipExplode.Left = 4000;
+            Beam.Top = 4000;
+            ShipExplode.Left = 4000;
+            Beam.Top = 4000;
+            ShipExplode.Left = 4000;
+            Beam.Top = 4000;
+            ShipExplode.Left = 4000;
+            Beam.Top = 4000;
+            ShipExplode.Left = 4000;
             Projectile.Visible = false;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
                        Projectile.Parent = pictureBox1;
@@ -146,20 +157,110 @@ namespace CometShooter
             Points.Text += " - YOU DIED";
             Protagonist.Image = Properties.Resources.PlayerDed;
         }
-        private void Fire()
-        {
-            Projectile.Visible = true;
-            Projectile.Top = Protagonist.Top + 60;
-            Projectile.Left = 220;
+            ProjHit.Left = Projectile.Left + 40;
+            ProjHit.Top = Projectile.Top -50;
+            ProjHit.Image = Properties.Resources.ProjectileHitAnimatedHQ;
         }
-        private void ProjectileHit()
+        private void BossMovement()
         {
-            ProjHit.Left = Projectile.Left;
-            ProjHit.Top = Projectile.Top - 20;
-            ProjHit.Image = Properties.Resources.ProjectileHitAnimated;
+            if(bossUp==true) { MechaBossZilla.Top -= speed; }
+            if (bossDown == true) { MechaBossZilla.Top += speed; }
+            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
+            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
         }
-        private void FormGame_Load(object sender, EventArgs e)
+        private void BossAttack()
         {
+            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
+            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
+            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
+                Beam.Top = MechaBossZilla.Top + 145;
+            }
+            if(Obstacle02.Left < -2100 && AttackPhase == 2)
+            {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
+                AttackPhase = 0;
+            }
+        private void BossMovement()
+        {
+            if(bossUp==true) { MechaBossZilla.Top -= speed; }
+            if (bossDown == true) { MechaBossZilla.Top += speed; }
+            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
+            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
+        }
+        private void BossAttack()
+        {
+            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
+            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
+            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
+                Beam.Top = MechaBossZilla.Top + 145;
+            }
+            if(Obstacle02.Left < -2100 && AttackPhase == 2)
+            {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
+                AttackPhase = 0;
+            }
+        private void BossMovement()
+        {
+            if(bossUp==true) { MechaBossZilla.Top -= speed; }
+            if (bossDown == true) { MechaBossZilla.Top += speed; }
+            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
+            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
+        }
+        private void BossAttack()
+        {
+            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
+            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
+            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
+                Beam.Top = MechaBossZilla.Top + 145;
+            }
+            if(Obstacle02.Left < -2100 && AttackPhase == 2)
+            {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
+                AttackPhase = 0;
+            }
+        private void BossMovement()
+        {
+            if(bossUp==true) { MechaBossZilla.Top -= speed; }
+            if (bossDown == true) { MechaBossZilla.Top += speed; }
+            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
+            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
+        }
+        private void BossAttack()
+        {
+            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
+            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
+            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
+                Beam.Top = MechaBossZilla.Top + 145;
+            }
+            if(Obstacle02.Left < -2100 && AttackPhase == 2)
+            {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
+                AttackPhase = 0;
+            }
+        private void BossMovement()
+        {
+            if(bossUp==true) { MechaBossZilla.Top -= speed; }
+            if (bossDown == true) { MechaBossZilla.Top += speed; }
+            if(MechaBossZilla.Top<-140) { bossUp = false; bossDown = true; }
+            if (MechaBossZilla.Top > 600) { bossUp = true; bossDown = false; }
+        }
+        private void BossAttack()
+        {
+            if(AttackPhase == 0) { Obstacle02.Left = -1000; AttackPhase = 1; Beam.Top = 4000; }
+            if(Obstacle02.Left < -1300 && AttackPhase == 1) { AttackPhase = 2; MechaBossZilla.Image = Properties.Resources.MechaBossZillaToFire; }
+            if(Obstacle02.Left < -1700 && AttackPhase == 2) {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZillaFire;
+                Beam.Top = MechaBossZilla.Top + 145;
+            }
+            if(Obstacle02.Left < -2100 && AttackPhase == 2)
+            {
+                MechaBossZilla.Image = Properties.Resources.MechaBossZilla1;
+                AttackPhase = 0;
+            }
 
         }
 
