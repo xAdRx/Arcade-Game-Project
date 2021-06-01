@@ -36,7 +36,14 @@ namespace CometShooter
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Visible = false;
+            ShowInTaskbar = false;
+
+            Form highscore = new FormHighscore();
+            highscore.ShowDialog();
+
+            Visible = true;
+            ShowInTaskbar = true;
         }
 
         private void button3_Click(object sender, EventArgs e)

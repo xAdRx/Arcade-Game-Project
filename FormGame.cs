@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace CometShooter
         bool cutscene;
         bool bossUp = true;
         bool bossDown = false;
-        int ZillaHealth = 10;
+        int ZillaHealth = 1;
         int AttackPhase = 0;
         public FormGame()
         {
@@ -28,6 +29,8 @@ namespace CometShooter
             InitializeComponent();
             Bosshealth.Visible = false;
             winner.Visible = false;
+            Nickname.Visible = false;
+            button1.Visible = false;
             Obstacle01.Left = 1100;
             Obstacle02.Left = 1900;
             Meteor1.Left = 2132;
@@ -64,7 +67,7 @@ namespace CometShooter
             Meteor4.Left -= speed;
             Points.Text = "Score: " + points;
 
-            if (points>9) { bossfight = true; }   // DO USTALENIA KIEDY JEST BOSSFIGHT ----------------------------------------------------------
+            if (points>1) { bossfight = true; }   // DO USTALENIA KIEDY JEST BOSSFIGHT ----------------------------------------------------------
 
             if (cutscene == true && MechaBossZilla.Left > 1100)
             { MechaBossZilla.Left-=speed; }
@@ -154,11 +157,12 @@ namespace CometShooter
             if (ZillaHealth < 0 && Obstacle01.Left < -1400)
             {
                 winner.Visible = true;
+                Nickname.Visible = true;
+                button1.Visible = true;
             }
             if (ZillaHealth < 0 && Obstacle01.Left < -1800)
             {
                 Timer.Stop();
-                this.Close();
             }
         }
         private void Press(object sender, KeyEventArgs e)
@@ -268,10 +272,90 @@ namespace CometShooter
         {
 
         }
+        private void Nickname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void saveScore()
+        {
+            var Nickname = this.Nickname.Text;
+            int Score = points;
+            string[] scores = new string[10];
+            string[] new_scores = new string[10];
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Users\\anvil\\source\\repos\\Arcade-Game-Project\\highscore.txt");
+            var currentHighscore = File.ReadAllText(path);
+
+            using (StringReader sr = new StringReader(currentHighscore))
+            {
+                string line;
+                int i = 0;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    scores[i] = line;
+                    new_scores[i] = scores[i];
+                    i++;
+                }
+            }
+
+            for (int i = 0; i < scores.Length; i++)
+            {
+                if(CompareScore(scores[i], Score))
+                {
+                    new_scores[i] = String.Format("{0}. {1} {2}", i+1, Nickname, Score);
+                    for (int j = i+1; j < 10; j++)
+                    {
+                        new_scores[j] = String.Format("{0}. {1}", j+1, scores[j - 1].Substring(3 + (j / 10)));
+                    }
+                    break;
+                }
+            }
+
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 10; i++)
+            {
+                sb.AppendFormat(new_scores[i]);
+                sb.Append('\n');
+            }
+
+            File.WriteAllText(path, sb.ToString());
+
+        }
+
+        private static bool CompareScore(string line, int Score) // return true if score is higher than compared one
+        {
+            int i=0;
+            var counter = 0;
+            while (i < line.Length)
+            {
+                if(line[i] == ' ') 
+                {
+                    counter++;
+                    if(counter == 2) { break; }
+                }
+                i++;
+            }
+
+            i++;
+
+            string helper = line[i..];
+            var helperInt = Int64.Parse(helper);
+
+            if (Score > helperInt) { return true;}
+
+            return false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveScore();
+            this.Close();
         }
     }
 }
