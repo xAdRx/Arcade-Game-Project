@@ -38,8 +38,7 @@ namespace CometShooter
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    sb.AppendFormat(line);
-                    sb.Append('\n');
+                    sb.AppendLine(line);
                 }
             }
 
