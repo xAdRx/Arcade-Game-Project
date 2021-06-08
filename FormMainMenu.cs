@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CometShooter
 {
     public partial class FormMainMenu : Form
     {
+        SoundPlayer menumusic = new SoundPlayer(@"..\..\..\Resources\muzyka.wav");
         public FormMainMenu()
         {
             InitializeComponent();
+            menumusic.PlayLooping();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

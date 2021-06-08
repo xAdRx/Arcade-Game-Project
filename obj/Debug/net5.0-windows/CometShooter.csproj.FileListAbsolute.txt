@@ -42,3 +42,4 @@ D:\ProjectGame\Repo\obj\Debug\net5.0-windows\CometShooter.dll
 D:\ProjectGame\Repo\obj\Debug\net5.0-windows\ref\CometShooter.dll
 D:\ProjectGame\Repo\obj\Debug\net5.0-windows\CometShooter.pdb
 D:\ProjectGame\Repo\obj\Debug\net5.0-windows\CometShooter.genruntimeconfig.cache
+D:\ProjectGame\Repo\obj\Debug\net5.0-windows\CometShooter.FormHighscore.resources

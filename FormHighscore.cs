@@ -31,8 +31,7 @@ namespace CometShooter
 
         private string loadHighscore()
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Users\\anvil\\source\\repos\\Arcade-Game-Project\\highscore.txt");
-            var currentHighscore = File.ReadAllText(path);
+            var currentHighscore = File.ReadAllText(@"..\..\..\highscore.txt");
             StringBuilder sb = new StringBuilder();
             using (StringReader sr = new StringReader(currentHighscore))
             {

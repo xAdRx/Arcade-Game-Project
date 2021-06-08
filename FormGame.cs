@@ -8,11 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CometShooter
 {
     public partial class FormGame : Form
     {
+        SoundPlayer SNDengine = new SoundPlayer(@"..\..\..\Resources\engine.wav");
+        SoundPlayer SNDLaser = new SoundPlayer(@"..\..\..\Resources\Laser_2.wav");
+        SoundPlayer SNDexplode = new SoundPlayer(@"..\..\..\Resources\Explosion_1.wav");
+        SoundPlayer SNDmeteor = new SoundPlayer(@"..\..\..\Resources\meteor_destruction.wav");
+        SoundPlayer menumusic = new SoundPlayer(@"..\..\..\Resources\muzyka.wav");
         int speed = 8;
         double gravity = 0;
         int points = 0;
@@ -20,10 +26,12 @@ namespace CometShooter
         bool cutscene;
         bool bossUp = true;
         bool bossDown = false;
-        int ZillaHealth = 1;
+        int ZillaHealth = 3;
         int AttackPhase = 0;
         public FormGame()
         {
+            menumusic.Stop();
+       //   SNDengine.PlayLooping();
             bossfight = false;
             cutscene = false;
             InitializeComponent();
@@ -115,29 +123,29 @@ namespace CometShooter
                     Projectile.Bounds.IntersectsWith(Meteor3.Bounds) || Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
                 { Projectile.Visible = false; ProjectileHit(); }
                 if (Projectile.Bounds.IntersectsWith(Meteor1.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
-                     if(bossfight == false) { Meteor1.Left = 2313; }
+                { Projectile.Visible = false; ProjectileHit(); SNDmeteor.Play();
+                    if (bossfight == false) { Meteor1.Left = 2313; }
                      else { Meteor1.Left = -2000; }
                 }
                 if (Projectile.Bounds.IntersectsWith(Meteor2.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
+                { Projectile.Visible = false; ProjectileHit(); SNDmeteor.Play();
                     if (bossfight == false) { Meteor2.Left = 2513; }
                     else { Meteor2.Left = -2000; }
                 }
                 if (Projectile.Bounds.IntersectsWith(Meteor3.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
+                { Projectile.Visible = false; ProjectileHit(); SNDmeteor.Play();
                     if (bossfight == false) { Meteor3.Left = 1913; }
                     else { Meteor3.Left = -2000; }
                 }
                 if (Projectile.Bounds.IntersectsWith(Meteor4.Bounds))
-                { Projectile.Visible = false; ProjectileHit();
+                { Projectile.Visible = false; ProjectileHit(); SNDmeteor.Play();
                     if (bossfight == false) { Meteor4.Left = 2113; }
                     else { Meteor4.Left = -2000; }
                 }
                 if (Projectile.Left > 1900) { Projectile.Visible = false; }
                 if (Projectile.Right > 1900) { Projectile.Visible = false; }
                 if (MechaBossZilla.Left < 1100 && Projectile.Bounds.IntersectsWith(MechaBossZilla.Bounds))
-                    { Projectile.Visible = false; ProjectileHit(); ZillaHealth--; }
+                    { Projectile.Visible = false; ProjectileHit(); ZillaHealth--; SNDmeteor.Play(); }
             }
             if (Protagonist.Bounds.IntersectsWith(Obstacle01.Bounds) || Protagonist.Bounds.IntersectsWith(Obstacle02.Bounds) || Protagonist.Top > 850 || Protagonist.Top < -70 || Protagonist.Bounds.IntersectsWith(Beam.Bounds))
             { UrDed(); }
@@ -163,6 +171,7 @@ namespace CometShooter
             if (ZillaHealth < 0 && Obstacle01.Left < -1800)
             {
                 Timer.Stop();
+                SNDengine.Stop();
             }
         }
         private void Press(object sender, KeyEventArgs e)
@@ -181,7 +190,9 @@ namespace CometShooter
             }
             if (e.KeyCode == Keys.Escape)
             {
+                SNDengine.Stop();
                 Timer.Stop();
+                menumusic.PlayLooping();
                 this.Close();
             }
         }
@@ -201,6 +212,8 @@ namespace CometShooter
         }
         private void UrDed()
         {
+            SNDengine.Stop();
+            SNDexplode.Play();
             Timer.Stop();
             Points.Text += " - YOU DIED";
             //            Protagonist.Image = Properties.Resources.PlayerDed;
@@ -213,6 +226,7 @@ namespace CometShooter
             Projectile.Visible = true;
             Projectile.Top = Protagonist.Top + 80;
             Projectile.Left = 220;
+            SNDLaser.Play();
         }
         private void ProjectileHit()
         {
@@ -244,6 +258,7 @@ namespace CometShooter
         }
         private void BossIsDead()
         {
+            SNDexplode.Play();
             ZillaHealth = -1;
             Obstacle01.Left = -800;
             Bosshealth.Visible = false;
@@ -288,8 +303,8 @@ namespace CometShooter
             int Score = points;
             string[] scores = new string[10];
             string[] new_scores = new string[10];
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Users\\anvil\\source\\repos\\Arcade-Game-Project\\highscore.txt");
-            var currentHighscore = File.ReadAllText(path);
+      //      var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Users\\anvil\\source\\repos\\Arcade-Game-Project\\highscore.txt");
+            var currentHighscore = File.ReadAllText(@"..\..\..\highscore.txt");
 
             using (StringReader sr = new StringReader(currentHighscore))
             {
@@ -324,7 +339,7 @@ namespace CometShooter
                 sb.Append('\n');
             }
 
-            File.WriteAllText(path, sb.ToString());
+            File.WriteAllText(@"..\..\..\highscore.txt", sb.ToString());
 
         }
 
@@ -355,6 +370,7 @@ namespace CometShooter
         private void button1_Click(object sender, EventArgs e)
         {
             saveScore();
+            menumusic.PlayLooping();
             this.Close();
         }
     }
